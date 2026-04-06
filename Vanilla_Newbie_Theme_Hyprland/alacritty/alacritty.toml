@@ -1,0 +1,66 @@
+# --- VANILLA NEWBIE ALACRITTY CONFIG ---
+
+[window]
+# Opacità leggera per far risaltare il blur di Hyprland
+opacity = 0.9
+padding = { x = 12, y = 12 }
+decorations = "none"
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold Italic"
+
+[cursor]
+style = { shape = "Beam", blinking = "Always" }
+vi_mode_style = { shape = "Block" }
+
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[colors.cursor]
+text = "#000000"
+cursor = "#00FFF7" # Cursore Cyan
+
+[colors.normal]
+black   = "#1a1a1a"
+red     = "#ff5555"
+green   = "#50fa7b"
+yellow  = "#f1fa8c"
+blue    = "#bd93f9"
+magenta = "#FA39FA" # Magenta Brand
+cyan    = "#00FFF7" # Cyan Brand
+white   = "#bbbbbb"
+
+[colors.bright]
+black   = "#444444"
+red     = "#ff6e6e"
+green   = "#69ff94"
+yellow  = "#ffffa5"
+blue    = "#d6acff"
+magenta = "#ff92ff"
+cyan    = "#a4ffff"
+white   = "#ffffff"
+
+[colors.selection]
+text = "#000000"
+background = "#00FFF7" # Selezione testo in Cyan
+
+[scrolling]
+history = 10000
+multiplier = 3

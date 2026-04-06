@@ -1,0 +1,46 @@
+[global]
+    ### --- Stile Generale ---
+    font = JetBrains Mono 11
+    
+    # Border & Shape (Coerente con i 20px di Wofi)
+    corner_radius = 20
+    frame_width = 6
+    
+    # Margini e Padding
+    offset = 20x20
+    padding = 15
+    horizontal_padding = 15
+    text_icon_padding = 15
+    
+    # Separatore tra notifiche (Cyan come l'input di Wofi)
+    separator_color = "#00FFF7"
+    separator_height = 2
+
+    ### --- Comportamento ---
+    transparency = 8  # Corrisponde allo 0.92 di alpha (92% opaco)
+    idle_threshold = 120
+    sticky_history = yes
+    history_length = 20
+    show_age_threshold = 60
+    word_wrap = yes
+
+[urgency_low]
+    # Sfondo nero, bordo Cyan
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#00FFF7"
+    timeout = 5
+
+[urgency_normal]
+    # Sfondo nero, bordo Magenta (Il colore principale di Wofi)
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#FA39FA"
+    timeout = 10
+
+[urgency_critical]
+    # Sfondo nero, bordo Magenta acceso e testo Cyan per gli errori
+    background = "#000000"
+    foreground = "#00FFF7"
+    frame_color = "#FA39FA"
+    timeout = 0

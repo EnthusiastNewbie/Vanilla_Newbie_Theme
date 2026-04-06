@@ -1,0 +1,278 @@
+/* ============================================================
+   VANILLA_NEWBIE GTK 4 
+   ============================================================ */
+
+/* --- COLORI --- */
+@define-color accent_color #00FFF7;
+@define-color accent_bg_color #00FFF7;
+@define-color accent_fg_color #000000;
+@define-color destructive_color #FA39FA;
+@define-color window_bg_color #000000;
+@define-color window_fg_color #ffffff;
+@define-color view_bg_color #000000;
+@define-color view_fg_color #ffffff;
+@define-color headerbar_bg_color #FA39FA;
+@define-color headerbar_fg_color #000000;
+@define-color card_bg_color #000000;
+@define-color card_fg_color #ffffff;
+@define-color popover_bg_color #000000;
+@define-color popover_fg_color #ffffff;
+
+/* --- BASE & GLOBAL RESET --- */
+* {
+    /* Rimuove l'effetto focus standard bluastro/grigio */
+    outline-color: #FA39FA; 
+}
+
+window, .background, .main-window, .view, textview {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* --- 1. HEADERBAR (La tua configurazione fissa) --- */
+headerbar {
+    background-color: #FA39FA;
+    color: #000000;
+    border-bottom: 2px solid #00FFF7;
+    min-height: 42px;
+    padding: 0px;
+    margin: 0px;
+    border-spacing: 0px;
+}
+
+headerbar > windowhandle,
+headerbar > box,
+headerbar > centerbox {
+    min-height: 42px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Bottoni Headerbar */
+headerbar button {
+    min-height: 26px;
+    margin: 8px 2px;
+    padding: 0px 6px;
+    background-color: transparent;
+    color: #000000;
+    box-shadow: none;
+    border: none;
+}
+
+headerbar button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Leggero feedback hover */
+}
+
+headerbar button image {
+    min-height: 16px;
+    min-width: 16px;
+    padding: 0; margin: 0;
+}
+
+/* Nautilus Pathbar Fix */
+window.nautilus-window headerbar .path-bar button {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    opacity: 1;
+    min-height: 26px;
+    margin: 8px 2px;
+    padding: 0 4px;
+}
+window.nautilus-window headerbar .path-bar button label {
+    color: #00FFF7;
+    font-weight: bold;
+    font-size: 14px;
+}
+window.nautilus-window headerbar .path-bar button:hover {
+    background-color: #00FFF7;
+    color: #000000;
+    border-radius: 4px;
+}
+window.nautilus-window headerbar .path-bar button:hover label {
+    color: #000000;
+}
+.path-bar image { color: #000000; margin: 0; }
+
+/* --- 2. ADWAITA GRAY KILLER --- */
+
+/* Rendiamo trasparenti o neri tutti i contenitori strutturali di Adwaita
+   che solitamente portano con sé quello sfondo grigio. */
+
+/* Container Generici */
+box, grid, paned, scrolledwindow, viewport, stack, adw-bin, adw-clamp, adw-leaflet {
+    background-color: transparent; 
+}
+
+/* Pagine di preferenze e gruppi (Settings di GNOME) */
+adw-preferences-page, 
+adw-preferences-group, 
+adw-preferences-group > box {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Liste e righe (es. Menu impostazioni, liste file) */
+list, row, list > row {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #333333; /* Separatori sottili grigi scuri */
+}
+
+/* Highlight Hover sulle liste */
+list > row:hover, 
+list > row:selected,
+flowboxchild:selected {
+    background-color: #00FFF7;
+    color: #000000;
+}
+
+/* Sidebar (Nautilus, Settings) */
+.sidebar, .navigation-sidebar {
+    background-color: #000000;
+    color: #ffffff;
+    border-right: 1px solid #333333;
+}
+
+/* Frame e Bordi */
+frame, border {
+    border-color: #333333;
+}
+
+/* Separatori che non vogliamo vedere */
+separator {
+    background-color: transparent;
+    opacity: 0; 
+}
+/* Ma manteniamo visibili i separatori utili dentro le liste o i paned */
+paned > separator {
+    background-color: #FA39FA; /* Maniglia di ridimensionamento Magenta */
+    opacity: 1;
+}
+
+/* --- 3. EDITOR DI TESTO (Gnome Text Editor / SourceView) --- */
+
+/* L'area di scrittura */
+textview {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Il "Gutter" (colonna numeri di riga a sinistra) */
+gutter {
+    background-color: #000000; 
+    border-right: 1px solid #333333;
+}
+
+/* I numeri di riga */
+gutter renderer {
+    color: #FA39FA; /* Numeri Magenta */
+    font-weight: bold;
+    background-color: #000000;
+}
+
+/* Riga corrente selezionata */
+textview .current-line-number {
+    color: #00FFF7; /* Numero riga corrente Ciano */
+    font-weight: bold;
+}
+
+/* --- 4. INPUT E ENTRY --- */
+entry {
+    background-color: #1a1a1a;
+    color: #00FFF7;
+    border: 1px solid #FA39FA;
+    caret-color: #FA39FA; /* Cursore che lampeggia */
+    min-height: 30px;
+    border-radius: 0px;
+}
+entry:focus-within {
+    border: 1px solid #00FFF7;
+    box-shadow: 0 0 5px rgba(0, 255, 247, 0.4);
+}
+entry selection {
+    background-color: #FA39FA;
+    color: #000000;
+}
+
+/* --- 5. MENU CONTESTUALI (POPOVER) FIX DEFINITIVO --- */
+
+/* Killer del riquadro nero esterno */
+popover.background {
+    background-color: transparent;
+    box-shadow: none; border: none;
+    margin: 0; padding: 0;
+}
+popover {
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0; padding: 0;
+}
+popover arrow {
+    background: none; border: none;
+    min-height: 0; min-width: 0;
+}
+
+/* Il corpo del menu */
+popover contents {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #00FFF7; /* Bordo Ciano */
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 255, 247, 0.3); /* Glow Ciano */
+    margin: 10px;
+    padding: 6px 0;
+}
+
+menu {
+    background-color: #000000;
+    border: 2px solid #00FFF7;
+    padding: 0px;
+}
+
+/* Elementi del menu */
+popover contents modelbutton {
+    min-height: 30px;
+    padding: 0 12px;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+popover contents modelbutton:hover {
+    background-color: #00FFF7;
+    color: #000000;
+}
+
+popover separator {
+    background-color: #333333;
+    min-height: 1px;
+    margin: 4px 0;
+    opacity: 1; /* Qui lo vogliamo visibile */
+}
+
+/* --- 6. SCROLLBARS (Minimal Ciano) --- */
+scrollbar {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+scrollbar slider {
+    min-width: 6px;
+    min-height: 6px;
+    background-color: #333333;
+    border-radius: 0px;
+}
+scrollbar slider:hover, scrollbar.dragging slider {
+    background-color: #FA39FA; /* Scrollbar Magenta quando la usi */
+}
+
+/* --- FIX BORDI FANTASMA --- */
+window > box > separator,
+window separator.horizontal {
+    background-color: transparent;
+    min-height: 0px;
+    border: none;
+    opacity: 0;
+}

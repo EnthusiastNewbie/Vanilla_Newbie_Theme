@@ -1,0 +1,13 @@
+[SddmTheme]
+Name=Vanilla_Newbie_Theme
+Description=Tema minimale per un Enthusiast Newbie
+Author=Tu
+Version=1.0
+Website=https://archlinux.org
+Screenshot=screenshot.png
+MainScript=Main.qml
+configFile=theme.conf
+TranslationsDirectory=translations
+Email=example@example.com
+Theme-Id=Vanilla_Newbie_Theme
+Theme-API=2.0

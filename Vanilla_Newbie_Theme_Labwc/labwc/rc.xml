@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <theme>
+    <name>Vanilla_Newbie</name>
+    <cornerRadius>8</cornerRadius>
+  </theme>
+  <font place="Menu">
+    <name>DejaVu Sans, FontAwesome</name>
+    <size>10</size>
+  </font>
+
+  <keyboard>
+    <default />
+
+    <keybind key="Super_L">
+      <action name="Execute" command="wofi --show drun" />
+    </keybind>
+
+    <keybind key="C-A-t">
+      <action name="Execute" command="alacritty" />
+    </keybind>
+
+
+    <keybind key="W-e">
+      <action name="Execute" command="thunar" />
+    </keybind>
+
+    <keybind key="A-F4">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-q">
+      <action name="Close" />
+    </keybind>
+
+    <keybind key="C-A-Delete">
+      <action name="Exit" />
+    </keybind>
+
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+
+    <keybind key="W-d">
+      <action name="ToggleMaximize" />
+    </keybind>
+
+    <keybind key="Print">
+      <action name="Execute" command="grim ~/Pictures/Screenshot_$(date +%Y-%m-%d_%H-%m-%s).png" />
+    </keybind>
+
+  </keyboard>
+</labwc_config>

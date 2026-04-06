@@ -1,0 +1,102 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+window#waybar {
+    border: 2px solid #00FFF7;
+    border-radius: 10px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Container comuni */
+#workspaces, #clock, #cpu, #memory, #pulseaudio, #network, #battery, #tray,
+#custom-backlight-icon, #custom-backlight-100, #custom-backlight-75, #custom-backlight-50, #custom-backlight-25 {
+    padding: 0 12px;
+    margin: 5px 3px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+#bluetooth {
+    color: #00FFF7;
+    padding: 0 12px;
+    margin: 5px 3px;
+    border-radius: 10px;
+}
+
+#bluetooth.connected {
+    color: #FA39FA;
+}
+
+/* GRUPPO MAGENTA: Icone di sistema e trigger */
+#pulseaudio, 
+#cpu, 
+#tray,
+#custom-launcher,
+#battery,
+#custom-backlight-icon { 
+    color: #FA39FA; 
+}
+
+/* GRUPPO CYAN: Info, Rete e i tuoi nuovi tasti luminosità */
+#network, 
+#memory, 
+#clock, 
+#custom-backlight-100, 
+#custom-backlight-75, 
+#custom-backlight-50, 
+#custom-backlight-25 { 
+    color: #00FFF7; 
+}
+
+#battery.critical { color: #ff0000; }
+
+/* --- STILE SLIDER AUDIO --- */
+#pulseaudio-slider {
+    min-width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#pulseaudio-slider slider {
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 8px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#pulseaudio-slider highlight {
+    min-height: 8px;
+    border-radius: 5px;
+    background-color: #FA39FA;
+}
+
+/* Hover e interazioni (Cyan per i numeri, Magenta per il resto) */
+#cpu:hover, #pulseaudio:hover, #custom-backlight-icon:hover {
+    background: rgba(250, 57, 250, 0.2);
+    box-shadow: inset 0 0 10px #FA39FA;
+}
+
+#network:hover, #memory:hover, #bluetooth:hover, #tray:hover,
+#custom-backlight-100:hover, #custom-backlight-75:hover, 
+#custom-backlight-50:hover, #custom-backlight-25:hover {
+    background: rgba(0, 255, 247, 0.2);
+    box-shadow: inset 0 0 10px #00FFF7;
+}
+
+#workspaces button { color: #ffffff; padding: 0 5px; }
+#workspaces button.active { color: #00FFF7; border-bottom: 2px solid #FA39FA; }
+
+#custom-launcher { font-size: 18px; padding: 0 15px; }
+#custom-power { color: #FA39FA; font-size: 18px; padding: 0 15px; }
+#custom-power:hover { color: #00FFF7; text-shadow: 0 0 5px #00FFF7; }

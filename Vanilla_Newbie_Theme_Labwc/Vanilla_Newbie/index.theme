@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Vanilla_Newbie
+Comment=Semplicissimo tema minimale con colori Cyan e Magenta
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=Vanilla_Newbie
+GtkTheme=Vanilla_Newbie
+IconTheme=Vanilla_Newbie
+MetacityTheme=Vanilla_Newbie

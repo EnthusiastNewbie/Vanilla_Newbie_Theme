@@ -1,0 +1,63 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "spacing": 5,
+    "modules-left": ["wlr/taskbar"],
+    "modules-center": ["clock"],
+    "modules-right": ["temperature", "cpu", "memory", "disk", "network", "pulseaudio", "battery", "tray"],
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 22,
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "format": "{:%H:%M  %d/%m/%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "{}% "
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "{free} ",
+        "path": "/"
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " Eth",
+        "format-disconnected": "⚠ No Net"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% ",
+        "on-click": "pavucontrol"
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 12
+    }
+}

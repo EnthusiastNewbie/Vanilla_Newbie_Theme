@@ -1,0 +1,24 @@
+[window]
+padding = { x = 12, y = 12 }
+decorations = "full"
+opacity = 1.0
+[font]
+size = 11.0
+[colors.primary]
+background = "#000000"
+foreground = "#00FFF7"
+[colors.cursor]
+text = "#000000"
+cursor = "#FA39FA"
+[colors.selection]
+text = "#000000"
+background = "#00FFF7"
+[colors.normal]
+black   = "#000000"
+red     = "#FA39FA"
+green   = "#00FFF7"
+yellow  = "#f1fa8c"
+blue    = "#bd93f9"
+magenta = "#FA39FA"
+cyan    = "#00FFF7"
+white   = "#ffffff"

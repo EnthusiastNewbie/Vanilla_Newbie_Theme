@@ -1,0 +1,8 @@
+mode=drun,run
+width=500
+height=300
+location=center
+no_actions=true
+prompt=Cerca...
+allow_images=true
+image_size=24

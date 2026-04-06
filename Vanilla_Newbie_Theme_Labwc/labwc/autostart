@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+# ---  WALLPAPER ---
+# Assicuriamoci che il percorso sia corretto (usa $HOME)
+swaybg -i "$HOME/Pictures/vanilla_wallpaper.png" -m fill &
+nm-applet --indicator &
+lxpolkit &
+
+# --- WAYBAR ---
+# Un piccolo sleep assicura che il compositore sia pronto a disegnare la barra.
+(
+   sleep 3
+   waybar
+) &

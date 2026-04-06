@@ -1,0 +1,136 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "spacing": 4,
+    "margin-top": 10,
+    "margin-left": 15,
+    "margin-right": 15,
+
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "group/audio",
+        "group/backlight",
+        "network",
+        "bluetooth",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+
+    // --- CONFIGURAZIONE GRUPPI (DRAWERS) ---
+
+    "group/audio": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-muted",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+
+    "group/backlight": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/backlight-icon",
+            "custom/backlight-100",
+            "custom/backlight-75",
+            "custom/backlight-50",
+            "custom/backlight-25"
+        ]
+    },
+
+
+    // --- CONFIGURAZIONE MODULI ---
+
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "active": "",
+            "urgent": ""
+        }
+    },
+
+    "clock": {
+        "format": "  {:%H:%M}",
+        "format-alt": "  {:%A, %d %B}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+
+    "cpu": { "format": " {usage}%", "on-click": "alacritty -e btop" },
+    "memory": { "format": " {used}GB", "on-click": "alacritty -e btop" },
+
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " Connected",
+        "format-disconnected": "⚠ Disconnected",
+        "on-click": "alacritty -e nmtui"
+    },
+    "tray": { "icon-size": 21, "spacing": 10 },
+    
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "on-click": "blueman-manager"
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    
+
+    "custom/backlight-icon": { "format": "", "tooltip": false },
+    "custom/backlight-100": { "format": "100%", "on-click": "brightnessctl set 100%", "tooltip": false },
+    "custom/backlight-75": { "format": "75%", "on-click": "brightnessctl set 75%", "tooltip": false },
+    "custom/backlight-50": { "format": "50%", "on-click": "brightnessctl set 50%", "tooltip": false },
+    "custom/backlight-25": { "format": "25%", "on-click": "brightnessctl set 25%", "tooltip": false },
+
+    "custom/power": {
+        "format": "⏻ ",
+        "on-click": "~/.config/waybar/scripts/power-menu.sh",
+        "tooltip": false
+    }
+}

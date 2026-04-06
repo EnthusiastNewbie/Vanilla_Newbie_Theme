@@ -1,0 +1,74 @@
+# --- LAYOUT E STRUTTURA ---
+# Spostiamo tutto nel format principale per garantire la visibilità su Bash
+format = """
+[](magenta)$os$hostname[](bg:cyan fg:magenta)$directory[](fg:cyan) $battery$memory_usage$cmd_duration[](cyan)[$time](bg:cyan fg:black)[](cyan)
+$git_branch$git_status$python$nodejs$rust$golang
+$character"""
+
+# Lasciamo il right_format vuoto per evitare conflitti
+right_format = """"""
+
+add_newline = true
+palette = "cyberpunk"
+
+# --- MODULI DI RIGA 1 ---
+
+[os]
+disabled = false
+style = "bg:magenta fg:black"
+format = "[ $symbol]($style)"
+
+[os.symbols]
+Arch = "󰣇 "
+
+[hostname]
+ssh_only = false
+style = "bg:magenta fg:black"
+format = "[$hostname ]($style)"
+
+[directory]
+style = "bg:cyan fg:black"
+format = "[ $path ]($style)"
+truncation_length = 0
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:cyan fg:black"
+format = "$time" # Rimosso lo spazio extra per la pillola
+
+[memory_usage]
+symbol = "󰍛 "
+style = "bold magenta"
+disabled = false
+threshold = -1 # MOSTRA SEMPRE
+format = " $symbol[$mem]($style) "
+
+[battery]
+disabled = false
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+format = "[$symbol$percentage]($style) "
+display = [{ threshold = 100, style = "bold cyan" }]
+
+[cmd_duration]
+min_time = 0
+style = "italic magenta"
+format = "󱘖 [$duration]($style) "
+
+# --- RIGA 2 E 3 ---
+
+[git_branch]
+symbol = "󰊢 "
+style = "bold magenta"
+format = "via [$symbol$branch]($style) "
+
+[character]
+success_symbol = "[ ⚡ ➜](bold magenta)" 
+error_symbol = "[ ⚡ ➜](bold red)"
+
+[palettes.cyberpunk]
+cyan = "#00ffff"
+magenta = "#ff00ff"
+black = "#000000"

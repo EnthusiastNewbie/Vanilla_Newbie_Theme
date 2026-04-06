@@ -1,0 +1,36 @@
+# ============================================================
+# VANILLA_NEWBIE WM THEME
+# ============================================================
+border.width: 5
+padding.width: 4
+menu.items.font:shadow=no:bold=no:size=10:name=DejaVu Sans, FontAwesome
+
+# --- FINESTRA ATTIVA ---
+window.active.border.color: #00FFF7
+window.active.title.bg.color: #FA39FA
+window.active.label.text.color: #000000
+
+window.active.button.unpressed.bg.color: #FA39FA
+window.active.button.unpressed.image.color: #000000
+window.active.button.pressed.bg.color: #00FFF7
+window.active.button.hover.bg.color: #00FFF7
+
+# --- FINESTRA INATTIVA ---
+window.inactive.border.color: #004444
+window.inactive.title.bg.color: #FA39FA
+window.inactive.label.text.color: #000000
+
+window.inactive.button.unpressed.bg.color: #FA39FA
+window.inactive.button.unpressed.image.color: #000000
+
+# --- MENU ---
+menu.border.width: 2
+menu.border.color: #FA39FA
+menu.items.bg.color: #000000
+menu.items.text.color: #ffffff
+menu.items.active.bg.color: #00FFF7
+menu.items.active.text.color: #000000 
+
+# --- ALT-TAB (OSD) ---
+osd.border.width: 10
+osd.border.color: #00FFF7

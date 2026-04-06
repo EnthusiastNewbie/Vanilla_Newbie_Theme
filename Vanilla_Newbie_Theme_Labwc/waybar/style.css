@@ -1,0 +1,53 @@
+/* VANILLA_NEWBIE Waybar  */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "FontAwesome", "Sans Serif";
+    font-size: 14px;
+}
+
+window#waybar {
+    background: #000000;
+    color: #00FFF7;
+    border-bottom: 4px solid #FA39FA;
+}
+
+/* Moduli a SINISTRA (Taskbar) */
+#taskbar button {
+    padding: 0 12px;
+    background-color: transparent;
+    border-bottom: 3px solid transparent;
+}
+#taskbar button.active {
+    background-color: rgba(0, 255, 247, 0.1);
+    border-bottom: 3px solid #00FFF7;
+}
+
+/* Orologio CENTRALE (Ciano) */
+#clock {
+    padding: 0 20px;
+    background-color: #00FFF7;
+    color: #000000;
+    font-weight: bold;
+    margin: 4px 0;
+    border-radius: 4px;
+}
+
+/* Moduli a DESTRA (Blocchi Magenta) */
+#temperature, #cpu, #memory, #disk, #network, #tray, #pulseaudio, #battery {
+    padding: 0 12px;
+    margin: 4px 2px;
+    color: #000000;
+    background-color: #FA39FA;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Stati Critici (es. Temperatura alta o Batteria scarica) */
+#temperature.critical, #battery.critical:not(.charging) {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+

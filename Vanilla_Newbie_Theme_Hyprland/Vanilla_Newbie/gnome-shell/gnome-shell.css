@@ -1,0 +1,414 @@
+/* Theme: Enthusiast Newbie Shell (Dracula Structure Modified)
+   Style: Cyberpunk Squared (Black/Cyan/Magenta)
+   Mods: Compact Size + Squared Corners (4px-6px radius)
+*/
+
+/* GLOBALS */
+stage {
+  font-family: Cantarell, Sans-Serif;
+  font-size: 11pt;
+  color: #ffffff;
+}
+
+/* WIDGETS */
+/* Buttons */
+.button, .icon-button, .modal-dialog .modal-dialog-button-box .modal-dialog-button, .app-folder-dialog .edit-folder-button, .quick-settings-system-item .icon-button, .screenshot-ui-type-button, .screenshot-ui-show-pointer-button {
+  color: #ffffff;
+  background-color: #000000;
+  box-shadow: none;
+  border: 1px solid #00fff7;
+}
+
+.button:focus, .icon-button:focus, .modal-dialog .modal-dialog-button-box .modal-dialog-button:focus, .app-folder-dialog .edit-folder-button:focus, .quick-settings-system-item .icon-button:focus, .screenshot-ui-type-button:focus, .screenshot-ui-show-pointer-button:focus {
+  background-color: rgba(0, 255, 247, 0.2);
+  color: #00fff7;
+  box-shadow: none !important;
+  border: 1px solid #00fff7;
+}
+
+.button:active, .button:checked, .icon-button:active, .icon-button:checked, .modal-dialog .modal-dialog-button-box .modal-dialog-button:active, .app-folder-dialog .edit-folder-button:active, .quick-settings-system-item .icon-button:active, .screenshot-ui-type-button:active, .screenshot-ui-show-pointer-button:active, .modal-dialog .modal-dialog-button-box .modal-dialog-button:checked, .app-folder-dialog .edit-folder-button:checked, .quick-settings-system-item .icon-button:checked, .screenshot-ui-type-button:checked, .screenshot-ui-show-pointer-button:checked {
+  color: #000000;
+  background-color: #fa39fa;
+  border: 1px solid #fa39fa;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.button:hover, .icon-button:hover, .modal-dialog .modal-dialog-button-box .modal-dialog-button:hover, .app-folder-dialog .edit-folder-button:hover, .quick-settings-system-item .icon-button:hover, .screenshot-ui-type-button:hover, .screenshot-ui-show-pointer-button:hover {
+  background-color: #00fff7;
+  color: #000000;
+  border: 1px solid #00fff7;
+}
+
+/* MODIFICA: Bottoni più compatti e squadrati */
+.button {
+  border-radius: 4px; /* Era 5px/8px */
+  padding: 3px 16px; /* Ridotto da 4px 32px */
+}
+
+/* Modal Buttons Linked */
+.modal-dialog-linked-button {
+  padding: 8px; /* Ridotto */
+  color: #ffffff;
+  background-color: #000000;
+  box-shadow: none;
+  border: 1px solid #00fff7;
+}
+
+.modal-dialog-linked-button:active, .modal-dialog-linked-button:checked {
+  color: #000000;
+  background-color: #fa39fa;
+  border: 1px solid #fa39fa;
+}
+
+.modal-dialog-linked-button:hover, .modal-dialog-linked-button:focus {
+  background-color: #00fff7;
+  color: #000000;
+  border: 1px solid #00fff7;
+}
+
+/* Entries (Caselle di testo) */
+StEntry {
+  background-color: #000000;
+  border-color: #00fff7;
+  border-radius: 4px; /* Squadrato */
+  padding: 4px;
+  color: #ffffff;
+  border-width: 1px;
+  selection-background-color: #fa39fa;
+  selected-color: #000000;
+}
+
+StEntry:hover, StEntry:focus {
+  background-color: #000000;
+  border-color: #fa39fa;
+  box-shadow: inset 0 0 0 1px #fa39fa;
+}
+
+/* Scrollbars */
+StScrollBar {
+  padding: 0;
+}
+StScrollView StScrollBar {
+  min-width: 8px; /* Più sottile */
+  min-height: 8px;
+}
+StScrollBar StBin#trough {
+  border-radius: 0;
+  background-color: transparent;
+}
+StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
+  border-radius: 4px; /* Squadrato */
+  background-color: #00fff7;
+  margin: 2px;
+}
+StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover {
+  background-color: #fa39fa;
+}
+
+/* Slider */
+.slider {
+  color: #ffffff;
+  -barlevel-height: 4px;
+  -barlevel-background-color: rgba(255, 255, 255, 0.2);
+  -barlevel-border-width: 0px;
+  -barlevel-active-background-color: #00fff7;
+  -slider-handle-radius: 6px; /* Maniglia più piccola */
+}
+
+/* Switches (Interruttori) */
+.toggle-switch {
+    width: 44px; /* Più piccolo */
+    height: 20px;
+    background-color: transparent !important;
+    border: 1px solid #00fff7;
+    border-radius: 4px; /* Rettangolare */
+}
+.toggle-switch:checked {
+    background-color: #fa39fa !important;
+    border-color: #fa39fa;
+}
+
+/* Modal Dialogs */
+.modal-dialog {
+  border: 2px solid #00fff7;
+  border-radius: 6px; /* Meno rotondo */
+  color: #ffffff;
+  background-color: #000000;
+  padding: 0 !important;
+}
+
+/* End Session Dialog */
+.end-session-dialog {
+  border: 2px solid #00fff7;
+  background-color: #000000;
+  border-radius: 6px;
+}
+
+.end-session-dialog-list, .end-session-dialog-layout {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+/* Popovers/Menus */
+.popup-menu {
+  min-width: 15em;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.popup-sub-menu {
+  background-color: #000000;
+  border: none;
+}
+.popup-sub-menu .popup-menu-item {
+  background-color: #000000 !important;
+  color: #ffffff;
+}
+.popup-sub-menu .popup-menu-item:hover, 
+.popup-sub-menu .popup-menu-item:focus {
+  background-color: #00fff7 !important;
+  color: #000000 !important;
+}
+
+.popup-menu-content {
+  padding: 6px;
+  background-color: #000000;
+  border-radius: 6px; /* Meno rotondo */
+  border: 1px solid #00fff7;
+}
+
+.popup-menu-item {
+  spacing: 6px;
+  border-radius: 4px; /* Squadrato */
+  color: #ffffff !important;
+  padding: 4px 6px; /* Più compatto */
+}
+
+.popup-menu-item:hover, .popup-menu-item:focus {
+  background-color: #00fff7 !important;
+  color: #000000 !important;
+}
+.popup-menu-item:active, .popup-menu-item:checked {
+  background-color: #fa39fa !important;
+  color: #000000 !important;
+}
+
+.popup-separator-menu-item {
+  height: 1px;
+  background-color: #00fff7;
+  margin: 4px 0;
+}
+
+/* OSD */
+.osd-window {
+  text-align: center;
+  font-weight: bold;
+  background-color: #000000;
+  border: 2px solid #00fff7;
+  border-radius: 8px; /* Meno rotondo */
+  padding: 12px;
+  color: #ffffff;
+}
+
+.osd-window .level {
+  height: 0.4em;
+  -barlevel-height: 0.4em;
+  -barlevel-background-color: rgba(255, 255, 255, 0.2);
+  -barlevel-active-background-color: #00fff7;
+}
+
+/* TOP BAR */
+#panel {
+  background-color: #000000;
+  border-bottom: 2px solid #00fff7;
+  font-weight: bold;
+  height: 28px; /* Ancora più basso */
+  color: #ffffff;
+}
+
+#panel .panel-button {
+  font-weight: bold;
+  color: #ffffff;
+  transition-duration: 100ms;
+  padding: 0 6px; /* Bottoni meno larghi */
+}
+
+#panel .panel-button:hover {
+  background-color: rgba(0, 255, 247, 0.2);
+  color: #00fff7;
+  box-shadow: inset 0 -2px 0px #fa39fa;
+}
+
+#panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
+  background-color: rgba(0, 255, 247, 0.2);
+  color: #00fff7;
+  box-shadow: inset 0 -2px 0px #fa39fa;
+}
+
+/* Calendar & Events */
+.calendar {
+  background: transparent;
+  border: none;
+}
+
+.world-clocks-button, .weather-button, .events-button {
+  background: #000000;
+  border: 1px solid #00fff7;
+  color: #ffffff;
+  border-radius: 4px; /* Squadrato */
+}
+.world-clocks-button:hover, .weather-button:hover {
+    background-color: #00fff7;
+    color: #000000;
+}
+
+.world-clocks-header, .weather-header, .events-section-title, .message-list-section-title {
+  color: #00fff7;
+  font-weight: bold;
+}
+
+.calendar-day-base {
+  color: #ffffff;
+  border-radius: 4px; /* Giorni del calendario squadrati */
+  width: 2.2em; height: 2.2em; /* Più piccoli */
+  font-size: 10pt;
+}
+.calendar-day-base:hover {
+  background-color: #00fff7;
+  color: #000000;
+}
+.calendar-day-base:selected {
+  background-color: #fa39fa;
+  color: #000000;
+}
+.calendar-today {
+  border: 2px solid #00fff7;
+  background-color: transparent;
+  color: #00fff7 !important;
+  font-weight: bold;
+}
+
+/* Notifications */
+.message-list {
+    background-color: #000000;
+}
+.message, .notification-banner {
+  background: #000000;
+  border: 1px solid #00fff7;
+  border-radius: 6px; /* Meno rotondo */
+  color: #ffffff;
+}
+.message-title {
+  color: #00fff7;
+  font-weight: bold;
+}
+.message-body {
+  color: #ffffff;
+}
+
+.notification-button, .message-close-button {
+    background-color: #000000;
+    border: 1px solid #00fff7;
+    color: #ffffff;
+    border-radius: 4px; /* Squadrato */
+    padding: 4px 10px; /* Compatto */
+}
+.notification-button:hover {
+    background-color: #00fff7;
+    color: #000000;
+}
+
+/* Quick Settings (MENU SISTEMA) */
+.quick-settings {
+  padding: 12px;
+}
+
+/* MODIFICA CRITICA: Resi squadrati i pulsanti "a pillola" */
+.quick-toggle {
+  border-radius: 6px !important; /* Forza forma rettangolare */
+  min-height: 36px; /* Più bassi */
+}
+
+/* Quick Toggle SPENTO */
+.quick-menu-toggle .quick-toggle-arrow, .quick-menu-toggle .quick-toggle-menu-button,
+.quick-toggle-has-menu .quick-toggle-arrow, .quick-toggle-has-menu .quick-toggle-menu-button {
+  background-color: #000000;
+  border: 1px solid #00fff7;
+  color: #ffffff;
+  border-radius: 6px; /* Rimuove arrotondamento strano */
+}
+
+/* Quick Toggle ACCESO */
+.quick-menu-toggle .quick-toggle-arrow:checked, .quick-menu-toggle .quick-toggle-menu-button:checked,
+.quick-toggle-has-menu .quick-toggle-arrow:checked, .quick-toggle-has-menu .quick-toggle-menu-button:checked {
+  background-color: #fa39fa;
+  color: #000000;
+  border-color: #fa39fa;
+}
+
+/* Override per i lati dei pulsanti divisi */
+.quick-menu-toggle .quick-toggle:ltr, .quick-toggle-has-menu .quick-toggle:ltr,
+.quick-menu-toggle .quick-toggle:rtl, .quick-toggle-has-menu .quick-toggle:rtl {
+    border-radius: 6px; 
+}
+.quick-menu-toggle .quick-toggle-arrow:ltr, .quick-menu-toggle .quick-toggle-menu-button:ltr {
+    border-radius: 0 6px 6px 0;
+}
+.quick-menu-toggle .quick-toggle:ltr:last-child {
+    border-radius: 6px;
+}
+
+.quick-toggle-menu {
+  background-color: #000000 !important;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 14px 0;
+  color: #ffffff;
+  border: 1px solid #00fff7;
+}
+
+/* Icone nel menu rapido */
+.quick-toggle-menu .header .icon {
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 6px; /* Icone Wifi/BT nei sottomenu squadrate */
+}
+.quick-toggle-menu .header .icon.active {
+  background-color: #fa39fa;
+  color: #000000;
+}
+
+/* System Action Icons (Spegnimento / Settings / Blocco) */
+.quick-settings-system-item .icon-button {
+    border-radius: 6px !important; /* Non più cerchi */
+    min-width: 32px;
+    min-height: 32px;
+}
+
+/* DASH */
+#dashtodockContainer #dash .dash-background {
+  background-color: rgba(0,0,0,0.9) !important;
+  border: none;
+  border-radius: 8px; /* Meno rotondo */
+}
+
+/* Workspace Switcher & App Grid */
+.overview-controls, .app-view-controls {
+    padding-bottom: 24px;
+}
+.search-entry {
+  background-color: #000000;
+  border: 2px solid #00fff7;
+  border-radius: 6px; /* Squadrato */
+  color: #ffffff;
+}
+.search-entry:focus {
+    border-color: #fa39fa;
+}
+
+/* Auth / Login */
+.auth-dialog, .login-dialog {
+    background-color: #000000;
+    border: 2px solid #00fff7;
+    border-radius: 6px;
+}
